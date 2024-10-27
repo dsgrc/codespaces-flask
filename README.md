@@ -8,6 +8,7 @@
 ---
 
 ## Project Structure
+```plaintext
 ├── README.md
 ├── __pycache__
 │   ├── app.cpython-312.pyc
@@ -23,7 +24,7 @@
 │   ├── index.html
 │   └── success.html
 └── vulnerable.db
-
+```
 ## Project Description
 
 README - cодержит описание проекта
