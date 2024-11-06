@@ -2,11 +2,11 @@ import sqlite3
 
 def check_credentials(username, password) -> bool:
     # Внимание: Этот код уязвим для SQL-инъекций и только для отладки!
-    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    query = f"SELECT * FROM users WHERE username = ? AND password = ?"
     print("Исполняемый SQL-запрос:", query)  # Вывод запроса для проверки инъекции
     conn = sqlite3.connect('vulnerable.db')
     cursor = conn.cursor()
-    cursor.execute(query)
+    cursor.execute(query,(username, password))
     
     user = cursor.fetchone()
     conn.close()
